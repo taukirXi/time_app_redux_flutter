@@ -6,5 +6,5 @@ class TimeState {
 
   TimeState.initialState()
       : location = "x",
-        time = "00:";
+        time = "00:00";
 }

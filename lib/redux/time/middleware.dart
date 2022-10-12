@@ -23,6 +23,7 @@ ThunkAction<AppState> fetchTime = (Store<AppState> store) async {
   String time;
   String location = locations[Random().nextInt(locations.length)] as String;
   // String location = "Africa/Abidjan";
+  debugPrint(location);
 
 
   // try {
@@ -45,12 +46,12 @@ ThunkAction<AppState> fetchTime = (Store<AppState> store) async {
   // }
 
   var response = await http.get(
-    Uri.parse('https://worldtimeapi.org/api/timezone/Africa/Abidjan'),
+    Uri.parse('https://worldtimeapi.org/api/timezone/${location}'),
     headers: {
       "Content-Type": "application/json",
     },
   );
-  print(response.body + "asfjaj");
+  print(response.body);
   var data = countryFromJson(response.body);
 
 
